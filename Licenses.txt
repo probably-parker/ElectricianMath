@@ -1,0 +1,2 @@
+Roboto Font - Christian Robertson - Apache 2.0
+Godot 4.2 - Godot Team - MIT

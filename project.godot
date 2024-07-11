@@ -11,8 +11,16 @@ config_version=5
 [application]
 
 config/name="Electrician Math"
+run/main_scene="res://Scenes/Startup.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=720
+window/stretch/aspect="keep_width"
+window/handheld/orientation=6
 
 [rendering]
 
