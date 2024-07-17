@@ -1,0 +1,194 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnmdhr6alyi2h"]
+
+[ext_resource type="FontFile" uid="uid://dprpugrw1upld" path="res://Assets/Fonts/Roboto/Roboto-Regular.ttf" id="1_1wtsu"]
+[ext_resource type="Script" path="res://Scripts/Startup.gd" id="1_ansdf"]
+[ext_resource type="Script" path="res://Scripts/MenuContainer.gd" id="2_wnsws"]
+
+[sub_resource type="GDScript" id="GDScript_6jirp"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="Startup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_ansdf")
+
+[node name="MenuContainer" type="VBoxContainer" parent="."]
+top_level = true
+custom_minimum_size = Vector2(720, 720)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -360.0
+offset_right = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 1
+alignment = 2
+script = ExtResource("2_wnsws")
+
+[node name="CenterContainer" type="CenterContainer" parent="MenuContainer"]
+custom_minimum_size = Vector2(720, 100)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="MenuTitle" type="Label" parent="MenuContainer/CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1wtsu")
+theme_override_font_sizes/font_size = 64
+text = "Electrician Math"
+horizontal_alignment = 1
+
+[node name="AutoShowScrollBar" type="ScrollContainer" parent="MenuContainer"]
+top_level = true
+custom_minimum_size = Vector2(720, 620)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="ButtonGrid" type="GridContainer" parent="MenuContainer/AutoShowScrollBar"]
+custom_minimum_size = Vector2(720, 620)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/h_separation = 190
+theme_override_constants/v_separation = 100
+columns = 2
+
+[node name="LeftButtonMargin" type="MarginContainer" parent="MenuContainer/AutoShowScrollBar/ButtonGrid"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="AmpacityButton" type="Button" parent="MenuContainer/AutoShowScrollBar/ButtonGrid/LeftButtonMargin"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1wtsu")
+theme_override_font_sizes/font_size = 45
+text = "Ampacity"
+script = SubResource("GDScript_6jirp")
+
+[node name="RightButtonMargin" type="MarginContainer" parent="MenuContainer/AutoShowScrollBar/ButtonGrid"]
+layout_mode = 2
+theme_override_constants/margin_right = 60
+
+[node name="VoltageDropButton" type="Button" parent="MenuContainer/AutoShowScrollBar/ButtonGrid/RightButtonMargin"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1wtsu")
+theme_override_font_sizes/font_size = 45
+text = "Volt Drop"
+script = SubResource("GDScript_6jirp")
+
+[node name="LeftButtonMargin2" type="MarginContainer" parent="MenuContainer/AutoShowScrollBar/ButtonGrid"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="OhmsLawButton" type="Button" parent="MenuContainer/AutoShowScrollBar/ButtonGrid/LeftButtonMargin2"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1wtsu")
+theme_override_font_sizes/font_size = 39
+text = "Ohm's Law"
+script = SubResource("GDScript_6jirp")
+
+[node name="RightButtonMargin2" type="MarginContainer" parent="MenuContainer/AutoShowScrollBar/ButtonGrid"]
+layout_mode = 2
+theme_override_constants/margin_right = 60
+
+[node name="AwgToMilsButton" type="Button" parent="MenuContainer/AutoShowScrollBar/ButtonGrid/RightButtonMargin2"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1wtsu")
+theme_override_font_sizes/font_size = 33
+text = "AWG to Mils
+"
+script = SubResource("GDScript_6jirp")
+
+[node name="LeftButtonMargin3" type="MarginContainer" parent="MenuContainer/AutoShowScrollBar/ButtonGrid"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="PipeFillButton" type="Button" parent="MenuContainer/AutoShowScrollBar/ButtonGrid/LeftButtonMargin3"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1wtsu")
+theme_override_font_sizes/font_size = 50
+text = "Pipe Fill"
+script = SubResource("GDScript_6jirp")
+
+[node name="RightButtonMargin3" type="MarginContainer" parent="MenuContainer/AutoShowScrollBar/ButtonGrid"]
+layout_mode = 2
+theme_override_constants/margin_right = 60
+
+[node name="BoxFillButton" type="Button" parent="MenuContainer/AutoShowScrollBar/ButtonGrid/RightButtonMargin3"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1wtsu")
+theme_override_font_sizes/font_size = 50
+text = "Box Fill"
+script = SubResource("GDScript_6jirp")
+
+[node name="LeftButtonMargin4" type="MarginContainer" parent="MenuContainer/AutoShowScrollBar/ButtonGrid"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="FeetToInches" type="Button" parent="MenuContainer/AutoShowScrollBar/ButtonGrid/LeftButtonMargin4"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1wtsu")
+theme_override_font_sizes/font_size = 50
+text = "ft. to in."
+script = SubResource("GDScript_6jirp")
+
+[node name="RightButtonMargin4" type="MarginContainer" parent="MenuContainer/AutoShowScrollBar/ButtonGrid"]
+layout_mode = 2
+theme_override_constants/margin_right = 60
+
+[node name="ServiceLoadButton" type="Button" parent="MenuContainer/AutoShowScrollBar/ButtonGrid/RightButtonMargin4"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1wtsu")
+theme_override_font_sizes/font_size = 33
+text = "Service Load"
+script = SubResource("GDScript_6jirp")
+
+[node name="LeftButtonMargin5" type="MarginContainer" parent="MenuContainer/AutoShowScrollBar/ButtonGrid"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="BendingButton" type="Button" parent="MenuContainer/AutoShowScrollBar/ButtonGrid/LeftButtonMargin5"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1wtsu")
+theme_override_font_sizes/font_size = 50
+text = "Bending"
+script = SubResource("GDScript_6jirp")
+
+[node name="RightButtonMargin5" type="MarginContainer" parent="MenuContainer/AutoShowScrollBar/ButtonGrid"]
+layout_mode = 2
+theme_override_constants/margin_right = 60
+
+[node name="AboutButton" type="Button" parent="MenuContainer/AutoShowScrollBar/ButtonGrid/RightButtonMargin5"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1wtsu")
+theme_override_font_sizes/font_size = 50
+text = "About"
+script = SubResource("GDScript_6jirp")

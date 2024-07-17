@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6t8gwe53vsbc"]
+
+[ext_resource type="FontFile" uid="uid://dprpugrw1upld" path="res://Assets/Fonts/Roboto/Roboto-Regular.ttf" id="1_4a1so"]
+[ext_resource type="Script" path="res://Scripts/set_window_size.gd" id="1_lyptk"]
+
+[node name="TitleSplash" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lyptk")
+
+[node name="Title" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(720, 100)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -360.0
+offset_top = 100.0
+offset_right = 360.0
+offset_bottom = 218.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Title"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4a1so")
+theme_override_font_sizes/font_size = 95
+text = "Electrician Math"
+
+[node name="Subtitle" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -273.0
+offset_top = -37.5
+offset_right = 273.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Subtitle"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4a1so")
+theme_override_font_sizes/font_size = 30
+text = "A field reference for electricians
+ based on the 2023 NEC"
+horizontal_alignment = 1
